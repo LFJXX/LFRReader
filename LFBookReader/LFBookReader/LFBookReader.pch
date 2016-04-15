@@ -1,0 +1,53 @@
+//
+//  LFBookReader.pch
+//  LFBookReader
+//
+//  Created by apple on 16/3/30.
+//  Copyright © 2016年 xyb100. All rights reserved.
+//
+
+#ifndef LFBookReader_pch
+#define LFBookReader_pch
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "AFNetworking.h"
+#import "LFHttpTool.h"
+#import "MJExtension.h"
+#import "UIView+Frame.h"
+#import "LFLoginViewController.h"
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/TencentOAuthObject.h>
+#import "LFTabBarViewController.h"
+#import "LFNavigationController.h"
+#import "LFTabBar.h"
+#import "LFMainViewController.h"
+#import "LFMemberViewController.h"
+#import "LFHistoryViewController.h"
+#import "LFPrefleViewController.h"
+#import "LFClassicViewController.h"
+#import "LFBookeView.h"
+#import "DCPicScrollView.h"
+#import "LFBookDetailView.h"
+#import "E_ScrollViewController.h"
+#import "UIImageView+WebCache.h"
+#import "LFBookList.h"
+#define LFScreenW  [UIScreen mainScreen].bounds.size.width
+#define LFScreenH  [UIScreen mainScreen].bounds.size.height
+#define LFlightBlackColor [UIColor colorWithRed:0.2941 green:0.2902 blue:0.2902 alpha:1.0]
+#define LFlightGrayColor [UIColor colorWithRed:0.8784 green:0.8784 blue:0.8784 alpha:1.0]
+#define LFLightBlueColor [UIColor colorWithRed:96.0/255.0 green:206.0/255.0 blue:255.0/255.0 alpha:1.0]
+#define QQAppid  @"1105296640"
+#define QQAppKey  @"WZ9LIxyUUkkLKo4h"
+#ifdef DEBUG    // 如果在模拟器上运行
+#define LFLOG(...)  NSLog(__VA_ARGS__)
+#else
+#define LFLOG(...)
+#endif
+
+
+
+
+#endif
+
+#endif /* LFBookReader_pch */

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookReview" rowHeight="120" id="KGk-i7-Jjw" customClass="LFBookReviewCell">
+            <rect key="frame" x="0.0" y="0.0" width="349" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="349" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4.png" translatesAutoresizingMaskIntoConstraints="NO" id="ar6-ws-tBE">
+                        <rect key="frame" x="269" y="10" width="70" height="95"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="Ri4-lX-c3W"/>
+                            <constraint firstAttribute="width" secondItem="ar6-ws-tBE" secondAttribute="height" multiplier="14:19" id="yFF-ec-JPV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ri4-lX-c3W"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="范迪安" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF0-l3-5oc">
+                        <rect key="frame" x="10" y="35" width="45" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="7vJ-Jz-q2f"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年8月6日 - HTML5来了,7个混合式移动开发框架-CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCg-c8-2Ve">
+                        <rect key="frame" x="10" y="58" width="249" height="47"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="谈古村落保护" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-mN-RYu">
+                        <rect key="frame" x="10" y="10" width="96" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="ZFd-dx-QDc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JF0-l3-5oc" firstAttribute="leading" secondItem="Rbe-mN-RYu" secondAttribute="leading" id="0cu-T9-FHd"/>
+                    <constraint firstItem="MCg-c8-2Ve" firstAttribute="leading" secondItem="JF0-l3-5oc" secondAttribute="leading" id="Lgf-cj-mO2"/>
+                    <constraint firstAttribute="bottom" secondItem="ar6-ws-tBE" secondAttribute="bottom" constant="10" id="M7D-ul-ipd"/>
+                    <constraint firstItem="Rbe-mN-RYu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Pdt-75-uPW"/>
+                    <constraint firstAttribute="trailing" secondItem="ar6-ws-tBE" secondAttribute="trailing" constant="10" id="Yhc-CG-LzB"/>
+                    <constraint firstItem="JF0-l3-5oc" firstAttribute="top" secondItem="Rbe-mN-RYu" secondAttribute="bottom" constant="5" id="gt3-nA-1Iy"/>
+                    <constraint firstItem="Rbe-mN-RYu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="kf7-1n-S70"/>
+                    <constraint firstItem="MCg-c8-2Ve" firstAttribute="top" secondItem="JF0-l3-5oc" secondAttribute="bottom" constant="5" id="maT-61-XTD"/>
+                    <constraint firstItem="ar6-ws-tBE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nPq-ty-DKt"/>
+                    <constraint firstItem="MCg-c8-2Ve" firstAttribute="bottom" secondItem="ar6-ws-tBE" secondAttribute="bottom" id="pfg-BJ-9NI"/>
+                    <constraint firstItem="ar6-ws-tBE" firstAttribute="leading" secondItem="MCg-c8-2Ve" secondAttribute="trailing" constant="10" id="qf6-q3-191"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="authorLable" destination="JF0-l3-5oc" id="XVo-qD-cgI"/>
+                <outlet property="contenView" destination="MCg-c8-2Ve" id="vnh-4b-R4k"/>
+                <outlet property="iconView" destination="ar6-ws-tBE" id="Oko-EL-69S"/>
+                <outlet property="titleLable" destination="Rbe-mN-RYu" id="3wt-ja-8J6"/>
+            </connections>
+            <point key="canvasLocation" x="427.5" y="366"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="4.png" width="425" height="600"/>
+    </resources>
+</document>
