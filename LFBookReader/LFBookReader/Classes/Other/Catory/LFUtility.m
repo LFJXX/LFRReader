@@ -60,4 +60,17 @@
     }
     return confromTimesp;
 }
++ (NSMutableAttributedString *)resetContentWithText:(NSString *)text{
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(0, attributedString.length)];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+    paragraphStyle.maximumLineHeight = 30;  //最大的行高
+    paragraphStyle.lineSpacing = 5;  //行自定义行高度
+    [paragraphStyle setFirstLineHeadIndent:0];//首行缩进 根据用户昵称宽度在加5个像素
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
+    return attributedString;
+    
+}
 @end

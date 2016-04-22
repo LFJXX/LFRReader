@@ -10,6 +10,8 @@
 #import "LFBookDetailInfo.h"
 #import "LFCommentCell.h"
 #import "LFRelationShipView.h"
+#import "FdButton.h"
+#import "LFCommentDetailController.h"
 
 @interface LFBookDetailInfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
@@ -33,6 +35,12 @@
 @property (nonatomic,strong) UIView *publishInfoView;
 @property (nonatomic,strong) UILabel *publishSourse;
 
+@property (nonatomic,strong) UIView *barView;
+@property (nonatomic,strong) FdButton *downLoadBtn;
+@property (nonatomic,strong) FdButton *tryReadBtn;
+@property (nonatomic,strong) FdButton *addBookStoreBtn;
+
+
 @end
 
 @implementation LFBookDetailInfoViewController
@@ -43,6 +51,7 @@
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 200)];
     bgView.backgroundColor = LFRedColor;
     [self.view addSubview:bgView];
+    [self.view addSubview:self.barView];
     [self.view addSubview:self.tableView];
     [self loadNewData];
     
@@ -107,6 +116,7 @@
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (indexPath.row == 0) {
 
             LFRelationShipView *view;
@@ -140,7 +150,7 @@
         
             cell.textLabel.text = @"换一批试试";
             cell.textLabel.textAlignment = NSTextAlignmentCenter;
-            cell.textLabel.textColor = [UIColor colorWithRed:0.6002 green:0.7419 blue:1.0 alpha:1.0];
+            cell.textLabel.textColor = LFLightBlueColor;
             cell.textLabel.font = [UIFont systemFontOfSize:15];
         }
         return cell;
@@ -163,7 +173,7 @@
         
             cell.textLabel.text = @"去书评区看看";
             cell.textLabel.textAlignment = NSTextAlignmentCenter;
-            cell.textLabel.textColor = [UIColor colorWithRed:0.6002 green:0.7419 blue:1.0 alpha:1.0];
+            cell.textLabel.textColor = LFLightBlueColor;
             cell.textLabel.font = [UIFont systemFontOfSize:15];
         }else if (indexPath.section == 4){
         
@@ -171,6 +181,16 @@
             
         }
         return cell;
+    }
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.section == 1) {
+        LFCommentDetailController *detailVC = [[LFCommentDetailController alloc] init];
+        detailVC.commentList = self.bookInfo.commentinfo.commentlist[indexPath.row];
+        [self.navigationController pushViewController:detailVC animated:YES];
     }
     
 }
@@ -255,6 +275,34 @@
 
 #pragma mark
 
+- (UIView *)barView{
+
+    if (_barView == nil) {
+        _barView = [[UIView alloc] initWithFrame:CGRectMake(0, LFScreenH - 44-64, self.view.width, 44)];
+        _barView.backgroundColor = [UIColor purpleColor];
+        self.downLoadBtn = [self creatButtonWithFrame:CGRectMake(0, 0, self.view.width/3, _barView.height) tag:101 backgroundColor:[UIColor whiteColor] titleColor:LFLightBlueColor image:nil title:@"下载"];
+        self.tryReadBtn = [self creatButtonWithFrame:CGRectMake(CGRectGetMaxX(self.downLoadBtn.frame), 0, self.view.width/3, _barView.height) tag:102 backgroundColor:LFLightBlueColor titleColor:[UIColor whiteColor] image:nil title:@"免费试读"];
+        self.addBookStoreBtn = [self creatButtonWithFrame:CGRectMake(CGRectGetMaxX(self.tryReadBtn.frame), 0, self.view.width/3, _barView.height) tag:103 backgroundColor:[UIColor whiteColor] titleColor:LFLightBlueColor image:nil title:@"加入书架"];
+        
+    }
+    return _barView;
+}
+
+- (FdButton *)creatButtonWithFrame:(CGRect) frame tag:(NSInteger)tag backgroundColor:(UIColor *)color titleColor:(UIColor *)titleColor image:(UIImage *)image title:(NSString *)title{
+
+    FdButton *btn = [FdButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitleColor:titleColor forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:15];
+    btn.frame = frame;
+    btn.tag = tag;
+    [btn setBackgroundColor:color];
+    [btn setImage:image forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(tabbarClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_barView addSubview:btn];
+    
+    return btn;
+}
 - (UIView *)publishInfoView{
 
     if (_publishInfoView == nil) {
@@ -318,23 +366,11 @@
 
     return _introView;
 }
-- (NSMutableAttributedString *)resetContentWithText:(NSString *)text{
-    
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text];
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(0, attributedString.length)];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.alignment = NSTextAlignmentLeft;
-    paragraphStyle.maximumLineHeight = 30;  //最大的行高
-    paragraphStyle.lineSpacing = 5;  //行自定义行高度
-    [paragraphStyle setFirstLineHeadIndent:0];//首行缩进 根据用户昵称宽度在加5个像素
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
-    return attributedString;
-  
-}
+
 
 - (void)setUpFrame{
  NSString *text = self.bookInfo.introinfo.book.intro;
-    self.introLable.attributedText = [self resetContentWithText:text];
+    self.introLable.attributedText = [LFUtility resetContentWithText:text];
     CGFloat marginX = 10;
     CGFloat marginW = self.view.width - 2*marginX;
    ;
@@ -390,7 +426,7 @@
 - (UITableView *)tableView{
 
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64-44)];
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -469,6 +505,29 @@
     self.vipLable.text = @"购买VIP,享8.8折优惠";
     
     
+}
+
+- (void)tabbarClick:(UIButton *)sender{
+
+    NSInteger index = sender.tag;
+    switch (index) {
+        case 101:{
+            LFLOG(@"下载");
+        }
+            break;
+        case 102:{
+            LFLOG(@"免费试读");
+        }
+            break;
+        case 103:{
+            LFLOG(@"加入书架");
+
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

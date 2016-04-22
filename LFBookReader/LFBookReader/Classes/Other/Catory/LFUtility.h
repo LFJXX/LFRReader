@@ -24,4 +24,8 @@
  *  时间戳转时间
  */
 + (NSDate *)dateWithTimeStr:(NSString *)timeStr;
+/**
+ *  设置lable行间距
+ */
++ (NSMutableAttributedString *)resetContentWithText:(NSString *)text;
 @end

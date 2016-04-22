@@ -20,6 +20,7 @@
     CGFloat Y = 0;
     self.imageView.frame = CGRectMake(X, Y, W, H);
     self.titleLabel.frame = CGRectMake(0, CGRectGetMaxY(self.imageView.frame), self.width, self.height - H - Y);
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
     
 
     

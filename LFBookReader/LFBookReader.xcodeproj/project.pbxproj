@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1804C5C71CC9CE9E0024C539 /* LFRelationShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1804C5C61CC9CE9E0024C539 /* LFRelationShipView.m */; };
+		1804C5CA1CCA1B890024C539 /* LFCommentDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1804C5C91CCA1B890024C539 /* LFCommentDetailController.m */; };
+		1804C5CD1CCA24F20024C539 /* LFReplyViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1804C5CC1CCA24F20024C539 /* LFReplyViewCell.m */; };
 		181EA1F91CACC2740089E3C1 /* LFResigterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1F81CACC2740089E3C1 /* LFResigterViewController.m */; };
 		181EA1FE1CACC55A0089E3C1 /* LFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1FB1CACC55A0089E3C1 /* LFNavigationController.m */; };
 		181EA1FF1CACC55A0089E3C1 /* LFTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1FD1CACC55A0089E3C1 /* LFTabBarViewController.m */; };
@@ -227,6 +229,10 @@
 /* Begin PBXFileReference section */
 		1804C5C51CC9CE9E0024C539 /* LFRelationShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRelationShipView.h; sourceTree = "<group>"; };
 		1804C5C61CC9CE9E0024C539 /* LFRelationShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRelationShipView.m; sourceTree = "<group>"; };
+		1804C5C81CCA1B890024C539 /* LFCommentDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCommentDetailController.h; sourceTree = "<group>"; };
+		1804C5C91CCA1B890024C539 /* LFCommentDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCommentDetailController.m; sourceTree = "<group>"; };
+		1804C5CB1CCA24F20024C539 /* LFReplyViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFReplyViewCell.h; sourceTree = "<group>"; };
+		1804C5CC1CCA24F20024C539 /* LFReplyViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFReplyViewCell.m; sourceTree = "<group>"; };
 		181EA1F71CACC2740089E3C1 /* LFResigterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFResigterViewController.h; sourceTree = "<group>"; };
 		181EA1F81CACC2740089E3C1 /* LFResigterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFResigterViewController.m; sourceTree = "<group>"; };
 		181EA1FA1CACC55A0089E3C1 /* LFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFNavigationController.h; sourceTree = "<group>"; };
@@ -1001,6 +1007,8 @@
 				18334EB51CBB4E14002D2CAD /* LFCommendViewController.m */,
 				182B8C2A1CBF9DF000C746FD /* LFBookDetailInfoViewController.h */,
 				182B8C2B1CBF9DF000C746FD /* LFBookDetailInfoViewController.m */,
+				1804C5C81CCA1B890024C539 /* LFCommentDetailController.h */,
+				1804C5C91CCA1B890024C539 /* LFCommentDetailController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1052,6 +1060,8 @@
 				18AEB54A1CC8BFA000609223 /* LFCommentCell.m */,
 				1804C5C51CC9CE9E0024C539 /* LFRelationShipView.h */,
 				1804C5C61CC9CE9E0024C539 /* LFRelationShipView.m */,
+				1804C5CB1CCA24F20024C539 /* LFReplyViewCell.h */,
+				1804C5CC1CCA24F20024C539 /* LFReplyViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1678,6 +1688,7 @@
 				18E9DA021CB4E9C200415F0F /* E_CommentViewController.m in Sources */,
 				186746731CB6566C005B98C9 /* NSObject+MJCoding.m in Sources */,
 				18B6C1E51CB74BE300BB3487 /* SDWebImagePrefetcher.m in Sources */,
+				1804C5CA1CCA1B890024C539 /* LFCommentDetailController.m in Sources */,
 				18ADD8611CC753C30075F1DC /* LFCommentList.m in Sources */,
 				18B6C1EA1CB74BE300BB3487 /* UIImageView+HighlightedWebCache.m in Sources */,
 				18E9DA351CB4E9DA00415F0F /* E_CommonManager.m in Sources */,
@@ -1694,6 +1705,7 @@
 				18B6C1E01CB74BE300BB3487 /* SDWebImageCompat.m in Sources */,
 				18E9DA9B1CB5128300415F0F /* LFNotationViewController.m in Sources */,
 				1867464C1CB649B8005B98C9 /* AFNetworkReachabilityManager.m in Sources */,
+				1804C5CD1CCA24F20024C539 /* LFReplyViewCell.m in Sources */,
 				18E9D9F71CB4A05100415F0F /* LFArticleDetailViewController.m in Sources */,
 				181EA22D1CAD287E0089E3C1 /* LFBookeView.m in Sources */,
 				187F1F2A1CAB7E2D00890413 /* main.m in Sources */,

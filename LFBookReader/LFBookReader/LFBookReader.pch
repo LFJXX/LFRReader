@@ -39,6 +39,7 @@
 #define LFlightGrayColor [UIColor colorWithRed:0.8784 green:0.8784 blue:0.8784 alpha:1.0]
 #define LFLightBlueColor [UIColor colorWithRed:96.0/255.0 green:206.0/255.0 blue:255.0/255.0 alpha:1.0]
 #define LFRedColor [UIColor colorWithRed:0.9176 green:0.5765 blue:0.8157 alpha:1.0]
+#define LFLightBlueColor [UIColor colorWithRed:0.6002 green:0.7419 blue:1.0 alpha:1.0]
 #define QQAppid  @"1105296640"
 #define QQAppKey  @"WZ9LIxyUUkkLKo4h"
 #ifdef DEBUG    // 如果在模拟器上运行
