@@ -32,11 +32,13 @@
 #import "E_ScrollViewController.h"
 #import "UIImageView+WebCache.h"
 #import "LFBookList.h"
+#import "LFUtility.h"
 #define LFScreenW  [UIScreen mainScreen].bounds.size.width
 #define LFScreenH  [UIScreen mainScreen].bounds.size.height
 #define LFlightBlackColor [UIColor colorWithRed:0.2941 green:0.2902 blue:0.2902 alpha:1.0]
 #define LFlightGrayColor [UIColor colorWithRed:0.8784 green:0.8784 blue:0.8784 alpha:1.0]
 #define LFLightBlueColor [UIColor colorWithRed:96.0/255.0 green:206.0/255.0 blue:255.0/255.0 alpha:1.0]
+#define LFRedColor [UIColor colorWithRed:0.9176 green:0.5765 blue:0.8157 alpha:1.0]
 #define QQAppid  @"1105296640"
 #define QQAppKey  @"WZ9LIxyUUkkLKo4h"
 #ifdef DEBUG    // 如果在模拟器上运行

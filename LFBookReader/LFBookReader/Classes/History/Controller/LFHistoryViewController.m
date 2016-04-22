@@ -14,6 +14,7 @@
 #import "LFBookCommendViewController.h"
 #import "LFRank.h"
 #import "LFHandPick.h"
+#import "LFBookDetailInfoViewController.h"
 #define LFRGBColor  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1]
 
 @interface LFHistoryViewController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource>
@@ -94,6 +95,16 @@
         [cell.competitionBtn setBackgroundColor:LFRGBColor];
         return cell;
 
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.section == 2) {
+        
+        LFBookDetailInfoViewController *detailVc = [[LFBookDetailInfoViewController alloc] init];
+        detailVc.bookList = self.readArray[indexPath.row];
+        [self.navigationController pushViewController:detailVc animated:YES];
     }
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

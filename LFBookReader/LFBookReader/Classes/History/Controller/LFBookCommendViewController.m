@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"经典文章推荐";
+    self.title = @"经典小说推荐";
     self.view.backgroundColor = [UIColor whiteColor];
     [self creatUI];
     [self.view addSubview:self.tableView];
@@ -74,6 +74,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     LFBookDetailView *bookDetail = [LFBookDetailView show];
+    bookDetail.booklist = self.bookLists[indexPath.row];
     bookDetail.delegate = self;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

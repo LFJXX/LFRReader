@@ -94,6 +94,20 @@
 		187F1FA21CABCA1500890413 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 187F1FA11CABCA1500890413 /* libsqlite3.tbd */; };
 		187F1FA41CABCA1E00890413 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187F1FA31CABCA1E00890413 /* CoreTelephony.framework */; };
 		187F1FA71CABCC8C00890413 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 187F1FA61CABCC8C00890413 /* libstdc++.tbd */; };
+		18ADD85B1CC751AB0075F1DC /* LFChapInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD85A1CC751AB0075F1DC /* LFChapInfo.m */; };
+		18ADD85E1CC752EA0075F1DC /* LFCommentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD85D1CC752EA0075F1DC /* LFCommentInfo.m */; };
+		18ADD8611CC753C30075F1DC /* LFCommentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD8601CC753C30075F1DC /* LFCommentList.m */; };
+		18ADD8641CC754530075F1DC /* LFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD8631CC754530075F1DC /* LFUser.m */; };
+		18ADD8671CC75B290075F1DC /* LFSoreInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD8661CC75B290075F1DC /* LFSoreInfo.m */; };
+		18ADD86A1CC760580075F1DC /* LFIntroinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD8691CC760580075F1DC /* LFIntroinfo.m */; };
+		18ADD86D1CC761B90075F1DC /* LFBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD86C1CC761B90075F1DC /* LFBook.m */; };
+		18ADD8701CC764240075F1DC /* LFPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD86F1CC764240075F1DC /* LFPrice.m */; };
+		18ADD8731CC764D60075F1DC /* LFExpireBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD8721CC764D60075F1DC /* LFExpireBooks.m */; };
+		18ADD8761CC766060075F1DC /* LFBookDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD8751CC766060075F1DC /* LFBookDetailInfo.m */; };
+		18ADD87E1CC780030075F1DC /* LFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADD87D1CC780030075F1DC /* LFUtility.m */; };
+		18AEB53F1CC8A6C100609223 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AEB53D1CC8A6C000609223 /* down.png */; };
+		18AEB5401CC8A6C100609223 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AEB53E1CC8A6C100609223 /* up.png */; };
+		18AEB54B1CC8BFA000609223 /* LFCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AEB54A1CC8BFA000609223 /* LFCommentCell.m */; };
 		18B6C1DD1CB74BE300BB3487 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6C1BD1CB74BE300BB3487 /* MKAnnotationView+WebCache.m */; };
 		18B6C1DE1CB74BE300BB3487 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6C1BF1CB74BE300BB3487 /* NSData+ImageContentType.m */; };
 		18B6C1DF1CB74BE300BB3487 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6C1C11CB74BE300BB3487 /* SDImageCache.m */; };
@@ -228,8 +242,8 @@
 		181EA20D1CACC7130089E3C1 /* LFMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFMemberViewController.m; path = ../LFMemberViewController.m; sourceTree = "<group>"; };
 		181EA20F1CACC7200089E3C1 /* LFPrefleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFPrefleViewController.h; sourceTree = "<group>"; };
 		181EA2101CACC7200089E3C1 /* LFPrefleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFPrefleViewController.m; sourceTree = "<group>"; };
-		181EA2121CACC7FB0089E3C1 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		181EA2131CACC7FB0089E3C1 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		181EA2121CACC7FB0089E3C1 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "../UIView+Frame.h"; sourceTree = "<group>"; };
+		181EA2131CACC7FB0089E3C1 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "../UIView+Frame.m"; sourceTree = "<group>"; };
 		181EA2151CACC88D0089E3C1 /* LFLoginVIewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LFLoginVIewController.storyboard; sourceTree = "<group>"; };
 		181EA2171CACC8E40089E3C1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		181EA2191CACCC340089E3C1 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -365,6 +379,32 @@
 		187F1FA31CABCA1E00890413 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		187F1FA51CABCB2400890413 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = LFBookReader/Classes/Other/Lib/QQ/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		187F1FA61CABCC8C00890413 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		18ADD8591CC751AB0075F1DC /* LFChapInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFChapInfo.h; sourceTree = "<group>"; };
+		18ADD85A1CC751AB0075F1DC /* LFChapInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFChapInfo.m; sourceTree = "<group>"; };
+		18ADD85C1CC752EA0075F1DC /* LFCommentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCommentInfo.h; sourceTree = "<group>"; };
+		18ADD85D1CC752EA0075F1DC /* LFCommentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCommentInfo.m; sourceTree = "<group>"; };
+		18ADD85F1CC753C30075F1DC /* LFCommentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCommentList.h; sourceTree = "<group>"; };
+		18ADD8601CC753C30075F1DC /* LFCommentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCommentList.m; sourceTree = "<group>"; };
+		18ADD8621CC754530075F1DC /* LFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFUser.h; sourceTree = "<group>"; };
+		18ADD8631CC754530075F1DC /* LFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFUser.m; sourceTree = "<group>"; };
+		18ADD8651CC75B290075F1DC /* LFSoreInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFSoreInfo.h; sourceTree = "<group>"; };
+		18ADD8661CC75B290075F1DC /* LFSoreInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFSoreInfo.m; sourceTree = "<group>"; };
+		18ADD8681CC760580075F1DC /* LFIntroinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFIntroinfo.h; sourceTree = "<group>"; };
+		18ADD8691CC760580075F1DC /* LFIntroinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFIntroinfo.m; sourceTree = "<group>"; };
+		18ADD86B1CC761B90075F1DC /* LFBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFBook.h; sourceTree = "<group>"; };
+		18ADD86C1CC761B90075F1DC /* LFBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFBook.m; sourceTree = "<group>"; };
+		18ADD86E1CC764240075F1DC /* LFPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFPrice.h; sourceTree = "<group>"; };
+		18ADD86F1CC764240075F1DC /* LFPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFPrice.m; sourceTree = "<group>"; };
+		18ADD8711CC764D60075F1DC /* LFExpireBooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFExpireBooks.h; sourceTree = "<group>"; };
+		18ADD8721CC764D60075F1DC /* LFExpireBooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFExpireBooks.m; sourceTree = "<group>"; };
+		18ADD8741CC766060075F1DC /* LFBookDetailInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFBookDetailInfo.h; sourceTree = "<group>"; };
+		18ADD8751CC766060075F1DC /* LFBookDetailInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFBookDetailInfo.m; sourceTree = "<group>"; };
+		18ADD87C1CC780030075F1DC /* LFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFUtility.h; sourceTree = "<group>"; };
+		18ADD87D1CC780030075F1DC /* LFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFUtility.m; sourceTree = "<group>"; };
+		18AEB53D1CC8A6C000609223 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		18AEB53E1CC8A6C100609223 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		18AEB5491CC8BFA000609223 /* LFCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCommentCell.h; sourceTree = "<group>"; };
+		18AEB54A1CC8BFA000609223 /* LFCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCommentCell.m; sourceTree = "<group>"; };
 		18B6C1BC1CB74BE300BB3487 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		18B6C1BD1CB74BE300BB3487 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		18B6C1BE1CB74BE300BB3487 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -975,6 +1015,26 @@
 				18B6C23F1CB7B9B200BB3487 /* LFSrcitem.m */,
 				18B6C2411CB7B9D800BB3487 /* LFExtInfo.h */,
 				18B6C2421CB7B9D800BB3487 /* LFExtInfo.m */,
+				18ADD8591CC751AB0075F1DC /* LFChapInfo.h */,
+				18ADD85A1CC751AB0075F1DC /* LFChapInfo.m */,
+				18ADD85C1CC752EA0075F1DC /* LFCommentInfo.h */,
+				18ADD85D1CC752EA0075F1DC /* LFCommentInfo.m */,
+				18ADD85F1CC753C30075F1DC /* LFCommentList.h */,
+				18ADD8601CC753C30075F1DC /* LFCommentList.m */,
+				18ADD8621CC754530075F1DC /* LFUser.h */,
+				18ADD8631CC754530075F1DC /* LFUser.m */,
+				18ADD8651CC75B290075F1DC /* LFSoreInfo.h */,
+				18ADD8661CC75B290075F1DC /* LFSoreInfo.m */,
+				18ADD8681CC760580075F1DC /* LFIntroinfo.h */,
+				18ADD8691CC760580075F1DC /* LFIntroinfo.m */,
+				18ADD86B1CC761B90075F1DC /* LFBook.h */,
+				18ADD86C1CC761B90075F1DC /* LFBook.m */,
+				18ADD86E1CC764240075F1DC /* LFPrice.h */,
+				18ADD86F1CC764240075F1DC /* LFPrice.m */,
+				18ADD8711CC764D60075F1DC /* LFExpireBooks.h */,
+				18ADD8721CC764D60075F1DC /* LFExpireBooks.m */,
+				18ADD8741CC766060075F1DC /* LFBookDetailInfo.h */,
+				18ADD8751CC766060075F1DC /* LFBookDetailInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -985,6 +1045,8 @@
 				18381EBC1CAE4F2D00F1ECAA /* LFBookReviewCell.h */,
 				18381EBD1CAE4F2D00F1ECAA /* LFBookReviewCell.m */,
 				18381EBE1CAE4F2D00F1ECAA /* LFBookReviewCell.xib */,
+				18AEB5491CC8BFA000609223 /* LFCommentCell.h */,
+				18AEB54A1CC8BFA000609223 /* LFCommentCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -995,8 +1057,6 @@
 				187F1F6A1CAB829A00890413 /* AppDelegate.h */,
 				187F1F6B1CAB829A00890413 /* AppDelegate.m */,
 				187F1F6C1CAB829A00890413 /* Catory */,
-				181EA2121CACC7FB0089E3C1 /* UIView+Frame.h */,
-				181EA2131CACC7FB0089E3C1 /* UIView+Frame.m */,
 				187F1F6D1CAB829A00890413 /* Lib */,
 				187F1F6E1CAB829A00890413 /* Resource */,
 			);
@@ -1006,6 +1066,10 @@
 		187F1F6C1CAB829A00890413 /* Catory */ = {
 			isa = PBXGroup;
 			children = (
+				181EA2121CACC7FB0089E3C1 /* UIView+Frame.h */,
+				181EA2131CACC7FB0089E3C1 /* UIView+Frame.m */,
+				18ADD87C1CC780030075F1DC /* LFUtility.h */,
+				18ADD87D1CC780030075F1DC /* LFUtility.m */,
 			);
 			path = Catory;
 			sourceTree = "<group>";
@@ -1027,6 +1091,8 @@
 		187F1F6E1CAB829A00890413 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				18AEB53D1CC8A6C000609223 /* down.png */,
+				18AEB53E1CC8A6C100609223 /* up.png */,
 				181EA2191CACCC340089E3C1 /* back@2x.png */,
 				181EA2171CACC8E40089E3C1 /* icon@2x.png */,
 				181EA2231CAD24B40089E3C1 /* 1.png */,
@@ -1507,8 +1573,10 @@
 				187F1F9A1CABC41500890413 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				18334EE11CBB73B3002D2CAD /* ShareSDKUI.bundle in Resources */,
 				181EA2271CAD24B40089E3C1 /* 1.png in Resources */,
+				18AEB5401CC8A6C100609223 /* up.png in Resources */,
 				181EA22F1CAD288E0089E3C1 /* LFBookView.xib in Resources */,
 				18E9DA6D1CB4E9F400415F0F /* weixin@2x.png in Resources */,
+				18AEB53F1CC8A6C100609223 /* down.png in Resources */,
 				18EFCA1A1CB38A1700810F43 /* LFBookCommendCell.xib in Resources */,
 				187F1F381CAB7E2D00890413 /* LaunchScreen.storyboard in Resources */,
 				18E9DA561CB4E9F400415F0F /* Chapter2.txt in Resources */,
@@ -1589,6 +1657,7 @@
 				18E9DA041CB4E9C200415F0F /* E_ScrollViewController.m in Sources */,
 				18B6C2341CB7A2DE00BB3487 /* LFExtinfo.m in Sources */,
 				18EFC9E81CB3600B00810F43 /* LFBookCommendViewController.m in Sources */,
+				18ADD87E1CC780030075F1DC /* LFUtility.m in Sources */,
 				181EA2041CACC5660089E3C1 /* FdButton.m in Sources */,
 				18B6C1E81CB74BE300BB3487 /* UIImage+MultiFormat.m in Sources */,
 				18B6C2401CB7B9B200BB3487 /* LFSrcitem.m in Sources */,
@@ -1604,9 +1673,11 @@
 				18E9DA021CB4E9C200415F0F /* E_CommentViewController.m in Sources */,
 				186746731CB6566C005B98C9 /* NSObject+MJCoding.m in Sources */,
 				18B6C1E51CB74BE300BB3487 /* SDWebImagePrefetcher.m in Sources */,
+				18ADD8611CC753C30075F1DC /* LFCommentList.m in Sources */,
 				18B6C1EA1CB74BE300BB3487 /* UIImageView+HighlightedWebCache.m in Sources */,
 				18E9DA351CB4E9DA00415F0F /* E_CommonManager.m in Sources */,
 				18E9DA271CB4E9D100415F0F /* ILSlider.m in Sources */,
+				18ADD85E1CC752EA0075F1DC /* LFCommentInfo.m in Sources */,
 				186746701CB6566C005B98C9 /* MJPropertyKey.m in Sources */,
 				18E9DA371CB4E9DA00415F0F /* E_Mark.m in Sources */,
 				18381EBF1CAE4F2E00F1ECAA /* LFBookReviewCell.m in Sources */,
@@ -1623,6 +1694,7 @@
 				187F1F2A1CAB7E2D00890413 /* main.m in Sources */,
 				181EA2141CACC7FB0089E3C1 /* UIView+Frame.m in Sources */,
 				18E9DA931CB4EA0200415F0F /* NJKWebViewProgressView.m in Sources */,
+				18ADD8641CC754530075F1DC /* LFUser.m in Sources */,
 				18B6C2371CB7B61300BB3487 /* LFMember.m in Sources */,
 				18E9DA261CB4E9D100415F0F /* E_SettingTopBar.m in Sources */,
 				181EA2051CACC5660089E3C1 /* LFTabBar.m in Sources */,
@@ -1630,6 +1702,7 @@
 				181EA1FF1CACC55A0089E3C1 /* LFTabBarViewController.m in Sources */,
 				187F1F901CABA62400890413 /* LFLoginViewController.m in Sources */,
 				18E9DA031CB4E9C200415F0F /* E_ReaderViewController.m in Sources */,
+				18ADD8761CC766060075F1DC /* LFBookDetailInfo.m in Sources */,
 				18E9DA8C1CB4EA0200415F0F /* MJRefreshConst.m in Sources */,
 				1867467F1CB65FA8005B98C9 /* LFExt.m in Sources */,
 				18E9DA3A1CB4E9DA00415F0F /* NSDate+NSDate_E_Date.m in Sources */,
@@ -1643,7 +1716,9 @@
 				18E9DA381CB4E9DA00415F0F /* E_Paging.mm in Sources */,
 				18E9DA921CB4EA0200415F0F /* NJKWebViewProgress.m in Sources */,
 				186746501CB649B8005B98C9 /* AFURLSessionManager.m in Sources */,
+				18ADD86A1CC760580075F1DC /* LFIntroinfo.m in Sources */,
 				18B6C2431CB7B9D800BB3487 /* LFExtInfo.m in Sources */,
+				18ADD8701CC764240075F1DC /* LFPrice.m in Sources */,
 				181EA20B1CACC7070089E3C1 /* LFHistoryViewController.m in Sources */,
 				1867464F1CB649B8005B98C9 /* AFURLResponseSerialization.m in Sources */,
 				18EFCA111CB387E600810F43 /* LFArticleCell.m in Sources */,
@@ -1653,6 +1728,8 @@
 				18B6C1E21CB74BE300BB3487 /* SDWebImageDownloader.m in Sources */,
 				181EA2111CACC7200089E3C1 /* LFPrefleViewController.m in Sources */,
 				18E9DA8F1CB4EA0200415F0F /* UIScrollView+Extension.m in Sources */,
+				18ADD8731CC764D60075F1DC /* LFExpireBooks.m in Sources */,
+				18ADD86D1CC761B90075F1DC /* LFBook.m in Sources */,
 				18B6C1E31CB74BE300BB3487 /* SDWebImageDownloaderOperation.m in Sources */,
 				186746561CB6553F005B98C9 /* LFCategory.m in Sources */,
 				18B6C1E41CB74BE300BB3487 /* SDWebImageManager.m in Sources */,
@@ -1664,10 +1741,12 @@
 				1867464E1CB649B8005B98C9 /* AFURLRequestSerialization.m in Sources */,
 				186746721CB6566C005B98C9 /* NSObject+MJClass.m in Sources */,
 				18EFC9EC1CB360A800810F43 /* XLScrollViewer.m in Sources */,
+				18AEB54B1CC8BFA000609223 /* LFCommentCell.m in Sources */,
 				1867466F1CB6566C005B98C9 /* MJProperty.m in Sources */,
 				18E9DA911CB4EA0200415F0F /* UIView+Extension.m in Sources */,
 				18E9DA901CB4EA0200415F0F /* UIScrollView+MJRefresh.m in Sources */,
 				18B6C1E11CB74BE300BB3487 /* SDWebImageDecoder.m in Sources */,
+				18ADD85B1CC751AB0075F1DC /* LFChapInfo.m in Sources */,
 				18E9DA891CB4EA0200415F0F /* CDSideBarController.m in Sources */,
 				18EFCA0C1CB3621B00810F43 /* DCPicScrollView.m in Sources */,
 				18B6C1E61CB74BE300BB3487 /* UIButton+WebCache.m in Sources */,
@@ -1677,6 +1756,7 @@
 				18381EC31CAE7A3500F1ECAA /* LFSearchViewController.m in Sources */,
 				18E9DA941CB4EA0200415F0F /* UIImage+ImageEffects.m in Sources */,
 				18B6C1E91CB74BE300BB3487 /* UIImage+WebP.m in Sources */,
+				18ADD8671CC75B290075F1DC /* LFSoreInfo.m in Sources */,
 				18E9DA241CB4E9D100415F0F /* E_SearchTableViewCell.m in Sources */,
 				18E9DA061CB4E9C200415F0F /* E_WebViewControler.m in Sources */,
 				1867464D1CB649B8005B98C9 /* AFSecurityPolicy.m in Sources */,
