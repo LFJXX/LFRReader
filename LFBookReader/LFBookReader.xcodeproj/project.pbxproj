@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1804C5C71CC9CE9E0024C539 /* LFRelationShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1804C5C61CC9CE9E0024C539 /* LFRelationShipView.m */; };
 		181EA1F91CACC2740089E3C1 /* LFResigterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1F81CACC2740089E3C1 /* LFResigterViewController.m */; };
 		181EA1FE1CACC55A0089E3C1 /* LFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1FB1CACC55A0089E3C1 /* LFNavigationController.m */; };
 		181EA1FF1CACC55A0089E3C1 /* LFTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181EA1FD1CACC55A0089E3C1 /* LFTabBarViewController.m */; };
@@ -224,6 +225,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1804C5C51CC9CE9E0024C539 /* LFRelationShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFRelationShipView.h; sourceTree = "<group>"; };
+		1804C5C61CC9CE9E0024C539 /* LFRelationShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFRelationShipView.m; sourceTree = "<group>"; };
 		181EA1F71CACC2740089E3C1 /* LFResigterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFResigterViewController.h; sourceTree = "<group>"; };
 		181EA1F81CACC2740089E3C1 /* LFResigterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFResigterViewController.m; sourceTree = "<group>"; };
 		181EA1FA1CACC55A0089E3C1 /* LFNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFNavigationController.h; sourceTree = "<group>"; };
@@ -1047,6 +1050,8 @@
 				18381EBE1CAE4F2D00F1ECAA /* LFBookReviewCell.xib */,
 				18AEB5491CC8BFA000609223 /* LFCommentCell.h */,
 				18AEB54A1CC8BFA000609223 /* LFCommentCell.m */,
+				1804C5C51CC9CE9E0024C539 /* LFRelationShipView.h */,
+				1804C5C61CC9CE9E0024C539 /* LFRelationShipView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1717,6 +1722,7 @@
 				18E9DA921CB4EA0200415F0F /* NJKWebViewProgress.m in Sources */,
 				186746501CB649B8005B98C9 /* AFURLSessionManager.m in Sources */,
 				18ADD86A1CC760580075F1DC /* LFIntroinfo.m in Sources */,
+				1804C5C71CC9CE9E0024C539 /* LFRelationShipView.m in Sources */,
 				18B6C2431CB7B9D800BB3487 /* LFExtInfo.m in Sources */,
 				18ADD8701CC764240075F1DC /* LFPrice.m in Sources */,
 				181EA20B1CACC7070089E3C1 /* LFHistoryViewController.m in Sources */,

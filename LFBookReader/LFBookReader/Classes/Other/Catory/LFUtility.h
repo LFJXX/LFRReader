@@ -10,4 +10,18 @@
 
 @interface LFUtility : NSObject
 + (UILabel *)creatLableWithFrame:(CGRect)frame font:(CGFloat)font color:(UIColor *)color title:(NSString *)title;
+/**
+ *  时间转字符串
+ */
++ (NSString*)stringFromData:(NSDate*)data;
+/**
+ *  字符串转时间
+ */
+
++ (NSDate*)dateFromString:(NSString*)str;
+
+/**
+ *  时间戳转时间
+ */
++ (NSDate *)dateWithTimeStr:(NSString *)timeStr;
 @end

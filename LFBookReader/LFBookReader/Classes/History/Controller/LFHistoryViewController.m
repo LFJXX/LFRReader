@@ -45,6 +45,9 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
+    if (self.rankArray.count == 0) {
+        return 0;
+    }
     return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

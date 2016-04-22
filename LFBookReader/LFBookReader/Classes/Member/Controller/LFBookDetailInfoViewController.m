@@ -9,6 +9,7 @@
 #import "LFBookDetailInfoViewController.h"
 #import "LFBookDetailInfo.h"
 #import "LFCommentCell.h"
+#import "LFRelationShipView.h"
 
 @interface LFBookDetailInfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
@@ -27,6 +28,10 @@
 @property (nonatomic,strong) UIButton *expendBtn;
 @property (nonatomic,strong) UIView *checkTableView;
 @property (nonatomic,strong) UILabel *chapsizeLable;
+@property (nonatomic,strong) LFRelationShipView *sameCatoryView;
+@property (nonatomic,strong) LFRelationShipView *sameReaderView;
+@property (nonatomic,strong) UIView *publishInfoView;
+@property (nonatomic,strong) UILabel *publishSourse;
 
 @end
 
@@ -53,7 +58,12 @@
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
-    return 4;
+    if (self.bookInfo == nil) {
+        return 0;
+    }else{
+    
+        return 5;
+    }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -61,19 +71,19 @@
         return 2;
     }else if (section == 1){
     
-        return 3;
-    }else if (section == 2){
+        return 4;
+    }else if (section == 2 || section == 3){
     
-        return 1;
+        return 2;
     }else{
     
         return 1;
     }
-    return 10;
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (indexPath.section == 1) {
+    if (indexPath.section == 1 && indexPath.row != 3) {
          static NSString *identidier1 = @"commentList";
         LFCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:identidier1];
         if (cell == nil) {
@@ -90,14 +100,54 @@
         }
         
         return cell;
+    }else if(indexPath.section == 2 || indexPath.section == 3){
+    
+        static NSString *identifier = @"retation";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        if (indexPath.row == 0) {
+
+            LFRelationShipView *view;
+            if (indexPath.section == 2) {
+                view = self.sameCatoryView;
+            }else{
+                view = self.sameReaderView;
+            }
+            [cell.contentView addSubview:view];
+            for (LFBookeView *bookView in view.subviews) {
+                if ([bookView isKindOfClass:[LFBookeView class]]) {
+                    
+                    NSInteger  index = bookView.tag;
+                    LFExpireBooks *member;
+                    if (indexPath.section == 2) {
+                       member = self.bookInfo.expRec;
+                    }else{
+                        member = self.bookInfo.columbooks;
+                    }
+                    
+                    LFBookList *list = member.bookList[index];
+                    NSString *bid = [NSString stringWithFormat:@"%zd",list.bid];
+                    NSString *str = [bid substringFromIndex:bid.length - 3];
+                    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://wfqqreader.3g.qq.com/cover/%@/%@/t5_%@.jpg",str,bid,bid]];
+                    
+                    bookView.nameLable.text = list.title;
+                    [bookView.iconView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"4"]];
+                }
+            }
+        }else{
+        
+            cell.textLabel.text = @"换一批试试";
+            cell.textLabel.textAlignment = NSTextAlignmentCenter;
+            cell.textLabel.textColor = [UIColor colorWithRed:0.6002 green:0.7419 blue:1.0 alpha:1.0];
+            cell.textLabel.font = [UIFont systemFontOfSize:15];
+        }
+        return cell;
     }else{
     
         static NSString *identifier = @"detail";
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-//        if (cell == nil) {
-//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-//        }
         cell.selectionStyle  = UITableViewCellSelectionStyleNone;
         
         if (indexPath.section == 0) {
@@ -109,6 +159,16 @@
                 
                 [cell.contentView addSubview:self.checkTableView];
             }
+        }else if (indexPath.section == 1 && indexPath.row == 3){
+        
+            cell.textLabel.text = @"去书评区看看";
+            cell.textLabel.textAlignment = NSTextAlignmentCenter;
+            cell.textLabel.textColor = [UIColor colorWithRed:0.6002 green:0.7419 blue:1.0 alpha:1.0];
+            cell.textLabel.font = [UIFont systemFontOfSize:15];
+        }else if (indexPath.section == 4){
+        
+            [cell.contentView addSubview:self.publishInfoView];
+            
         }
         return cell;
     }
@@ -120,14 +180,55 @@
         if (indexPath.row == 0) {
             return self.introView.height;
         }
-    }else{
+    }else if(indexPath.section == 1 && indexPath.row != 3){
     
-        return 250;
+        return [self computeHeightWithIndex:indexPath.row];
+    }else if (indexPath.section == 2 || indexPath.section == 3 ){
+    
+        if (indexPath.row == 0) {
+            
+            return 150;
+        }else{
+        
+            return 44;
+        }
+    }else if (indexPath.section == 4){
+    
+        return 150;
     }
     return 44;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+
+    if (section == 0) {
+        return 0;
+    }
+    return 10;
+}
+- (CGFloat)computeHeightWithIndex:(NSInteger)index{
+
+    LFCommentList *list = self.bookInfo.commentinfo.commentlist[index];
+    CGFloat marginX = 10;
+    CGFloat titleViewH = 40;
+    CGFloat iconWH = 40;
+    CGFloat textLableH = 20;
+    if (list.title.length == 0) {
+        textLableH = 0;
+    }
+    CGFloat platFormH = 20;
+    CGFloat ContentH = [list.content boundingRectWithSize:CGSizeMake(LFScreenW - 2*marginX, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} context:nil].size.height;
+    if (index == 0) {
+        return titleViewH+iconWH+textLableH+ContentH+platFormH+5*marginX;
+    }else{
+        return iconWH+textLableH+ContentH+platFormH+5*marginX;
+    
+    }
+    
+}
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
+    
     CGPoint point = scrollView.contentOffset;
     if (point.y > 100) {
         [self.navigationController.navigationBar setBarTintColor:LFLightBlueColor];
@@ -153,15 +254,33 @@
 }
 
 #pragma mark
+
+- (UIView *)publishInfoView{
+
+    if (_publishInfoView == nil) {
+        CGFloat marginX = 10;
+        CGFloat W = LFScreenW - 2*marginX;
+        CGFloat H = 30;
+        _publishInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
+        UILabel *lable = [LFUtility creatLableWithFrame:CGRectMake(marginX,  marginX, W,H) font:15 color:[UIColor blackColor] title:@"更多出版信息"];
+        [_publishInfoView  addSubview:lable];
+        
+        self.publishSourse = [LFUtility creatLableWithFrame:CGRectMake(marginX, CGRectGetMaxY(lable.frame), W, H) font:13 color:[UIColor grayColor] title:@""];
+        [_publishInfoView addSubview:self.publishSourse];
+        UILabel *lable1 = [LFUtility creatLableWithFrame:CGRectMake(marginX, CGRectGetMaxY(_publishSourse.frame), W, H)  font:13 color:[UIColor grayColor] title:@"本书由QQ阅读电子版制作与发版"];
+        [_publishInfoView  addSubview:lable1];
+        UILabel *lable2 = [LFUtility creatLableWithFrame:CGRectMake(marginX, CGRectGetMaxY(lable1.frame), W, H)  font:13 color:[UIColor grayColor] title:@"版权所有*侵权必究"];
+        [_publishInfoView  addSubview:lable2];
+    }
+    self.publishSourse.text = [NSString stringWithFormat:@"版权:%@",self.bookInfo.introinfo.book.bookfrom];
+    return _publishInfoView;
+}
 - (UIView *)checkTableView{
    
     if (_checkTableView == nil) {
         _checkTableView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
         UILabel *textlable = [LFUtility creatLableWithFrame:CGRectMake(10, 0, 80, _checkTableView.height) font:16 color:[UIColor blackColor] title:@"查看目录"];
         [_checkTableView addSubview:textlable];
-        
-        
-       
        self.chapsizeLable  = [LFUtility creatLableWithFrame:CGRectMake(CGRectGetMaxX(textlable.frame)+20, 0, self.view.width, _checkTableView.height) font:14 color:[UIColor grayColor] title:@""];
          [_checkTableView addSubview:self.chapsizeLable];
 
@@ -193,22 +312,40 @@
         [self.expendBtn addTarget:self action:@selector(expendBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [_introView addSubview:expendBtn];
     }
-    self.introLable.text = self.bookInfo.introinfo.book.intro;
+    
+     
     [self setUpFrame];
 
     return _introView;
 }
+- (NSMutableAttributedString *)resetContentWithText:(NSString *)text{
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(0, attributedString.length)];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+    paragraphStyle.maximumLineHeight = 30;  //最大的行高
+    paragraphStyle.lineSpacing = 5;  //行自定义行高度
+    [paragraphStyle setFirstLineHeadIndent:0];//首行缩进 根据用户昵称宽度在加5个像素
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
+    return attributedString;
+  
+}
 
 - (void)setUpFrame{
-
+ NSString *text = self.bookInfo.introinfo.book.intro;
+    self.introLable.attributedText = [self resetContentWithText:text];
     CGFloat marginX = 10;
     CGFloat marginW = self.view.width - 2*marginX;
-    CGFloat H = [self.introLable.text boundingRectWithSize:CGSizeMake(marginW, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.introLable.font} context:nil].size.height;
+   ;
+ 
+    CGFloat H = [self.introLable.attributedText boundingRectWithSize:CGSizeMake(marginW, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height;
+
     if (self.expendBtn.selected == NO) {
-        H = 55;
+        H = 70;
     }
     self.introLable.frame = CGRectMake(marginX, marginX, marginW, H);
-//    self.introLable.backgroundColor = [UIColor yellowColor];
+
     self.expendBtn.frame = CGRectMake(self.view.width-10-marginX, CGRectGetMaxY(self.introLable.frame)-10, 10, 10);
     
     _introView.frame = CGRectMake(0, 0, self.view.width, CGRectGetMaxY(self.introLable.frame)+marginX);
@@ -229,6 +366,26 @@
         [self setUpFrame];
     }
     
+}
+- (LFRelationShipView *)sameCatoryView{
+
+    if (_sameCatoryView == nil) {
+        CGFloat marginX = 10;
+        CGFloat height = 150;
+        _sameCatoryView = [[LFRelationShipView alloc] initWithFrame:CGRectMake(marginX, marginX, LFScreenW - 2*marginX, height)];
+    }
+    return _sameCatoryView;
+}
+
+- (LFRelationShipView *)sameReaderView{
+
+    if (_sameReaderView == nil) {
+        CGFloat marginX = 10;
+        CGFloat height = 150;
+        _sameReaderView = [[LFRelationShipView alloc] initWithFrame:CGRectMake(marginX, marginX, LFScreenW - 2*marginX, height)];
+        
+    }
+    return _sameReaderView;
 }
 - (UITableView *)tableView{
 

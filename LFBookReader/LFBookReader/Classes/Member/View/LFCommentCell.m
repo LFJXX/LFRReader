@@ -55,7 +55,8 @@
     _commentList = commentList;
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:commentList.user.icon]];
     self.nameLable.text = commentList.user.nickname;
-    self.timeLable.text = [NSString stringWithFormat:@"%ld",commentList.createtime];
+    NSString *timestr = [NSString stringWithFormat:@"%ld",commentList.createtime];
+    self.timeLable.text = [LFUtility stringFromData:[LFUtility dateWithTimeStr:timestr]];
     self.textlable.text = commentList.title;
     self.contentLable.text = commentList.content;
     self.platFormLable.text = commentList.platformname;

@@ -20,4 +20,44 @@
     return lable;
     
 }
+#pragma mark - 时间转字符串
+
++ (NSString*)stringFromData:(NSDate*)data
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY-MM-dd"];
+    
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+    [formatter setTimeZone:timeZone];
+    NSString *str = [formatter stringFromDate:data];
+    return str;
+    
+    
+}
+#pragma mark - 字符串转时间
++ (NSDate*)dateFromString:(NSString*)str
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat : @"YYYY-MM-dd"];
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    [formatter setTimeZone:timeZone];
+    NSDate* date = [formatter dateFromString:str];
+    return date;
+}
+
+#pragma mark -- 时间戳转换为时间
++ (NSDate *)dateWithTimeStr:(NSString *)timeStr{
+    
+    NSDate *confromTimesp;
+    if (timeStr.length > 10) {
+        int  b = [[timeStr substringWithRange:NSMakeRange(0,10)] intValue];
+        confromTimesp= [NSDate dateWithTimeIntervalSince1970:b];
+    }else{
+        confromTimesp= [NSDate dateWithTimeIntervalSince1970:0];
+        
+    }
+    return confromTimesp;
+}
 @end
