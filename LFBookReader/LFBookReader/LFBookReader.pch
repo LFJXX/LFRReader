@@ -33,6 +33,7 @@
 #import "UIImageView+WebCache.h"
 #import "LFBookList.h"
 #import "LFUtility.h"
+#import "SYStarRatingView.h"
 #define LFScreenW  [UIScreen mainScreen].bounds.size.width
 #define LFScreenH  [UIScreen mainScreen].bounds.size.height
 #define LFlightBlackColor [UIColor colorWithRed:0.2941 green:0.2902 blue:0.2902 alpha:1.0]

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LFCommentList.h"
 @interface LFReplyViewCell : UITableViewCell
-
+@property (nonatomic,strong) LFCommentList *commentlist;
+@property (nonatomic,assign) BOOL hidden;
 @end

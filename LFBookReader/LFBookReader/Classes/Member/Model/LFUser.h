@@ -32,4 +32,5 @@
 @property (nonatomic,assign) NSInteger admin;
 @property (nonatomic,assign) NSInteger fanslevel;
 @property (nonatomic,assign) NSInteger uid;
+
 @end

@@ -135,6 +135,12 @@
 		18B6C23D1CB7B69000BB3487 /* LFBookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6C23C1CB7B69000BB3487 /* LFBookInfo.m */; };
 		18B6C2401CB7B9B200BB3487 /* LFSrcitem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6C23F1CB7B9B200BB3487 /* LFSrcitem.m */; };
 		18B6C2431CB7B9D800BB3487 /* LFExtInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6C2421CB7B9D800BB3487 /* LFExtInfo.m */; };
+		18C831241CCF01BB003EEF02 /* backgroundStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C8311C1CCF01BB003EEF02 /* backgroundStar.png */; };
+		18C831251CCF01BB003EEF02 /* backgroundStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C8311D1CCF01BB003EEF02 /* backgroundStar@2x.png */; };
+		18C831261CCF01BB003EEF02 /* foregroundStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C8311E1CCF01BB003EEF02 /* foregroundStar.png */; };
+		18C831271CCF01BB003EEF02 /* foregroundStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C8311F1CCF01BB003EEF02 /* foregroundStar@2x.png */; };
+		18C831281CCF01BB003EEF02 /* SYStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831211CCF01BB003EEF02 /* SYStarRatingView.m */; };
+		18C831291CCF01BB003EEF02 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831231CCF01BB003EEF02 /* UIImage+Tint.m */; };
 		18E9D9F71CB4A05100415F0F /* LFArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9D9F61CB4A05100415F0F /* LFArticleDetailViewController.m */; };
 		18E9DA021CB4E9C200415F0F /* E_CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9D9F91CB4E9C200415F0F /* E_CommentViewController.m */; };
 		18E9DA031CB4E9C200415F0F /* E_ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9D9FB1CB4E9C200415F0F /* E_ReaderViewController.m */; };
@@ -207,6 +213,10 @@
 		18EFCA1A1CB38A1700810F43 /* LFBookCommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFCA181CB38A1700810F43 /* LFBookCommendCell.xib */; };
 		18EFCA201CB3902C00810F43 /* LFBookDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFCA1F1CB3902C00810F43 /* LFBookDetailView.m */; };
 		18EFCA221CB3903900810F43 /* LFBookDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFCA211CB3903900810F43 /* LFBookDetailView.xib */; };
+		18F235EB1CCDE49B0018CA0D /* LFBookCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F235EA1CCDE49B0018CA0D /* LFBookCommentController.m */; };
+		18F235EE1CCE129F0018CA0D /* LFBookComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F235ED1CCE129F0018CA0D /* LFBookComment.m */; };
+		18F235F21CCE158E0018CA0D /* LFBookCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F235F01CCE158E0018CA0D /* LFBookCommentCell.m */; };
+		18F235F31CCE158E0018CA0D /* LFBookCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F235F11CCE158E0018CA0D /* LFBookCommentCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -463,6 +473,14 @@
 		18B6C23F1CB7B9B200BB3487 /* LFSrcitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFSrcitem.m; sourceTree = "<group>"; };
 		18B6C2411CB7B9D800BB3487 /* LFExtInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFExtInfo.h; sourceTree = "<group>"; };
 		18B6C2421CB7B9D800BB3487 /* LFExtInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFExtInfo.m; sourceTree = "<group>"; };
+		18C8311C1CCF01BB003EEF02 /* backgroundStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundStar.png; sourceTree = "<group>"; };
+		18C8311D1CCF01BB003EEF02 /* backgroundStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundStar@2x.png"; sourceTree = "<group>"; };
+		18C8311E1CCF01BB003EEF02 /* foregroundStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foregroundStar.png; sourceTree = "<group>"; };
+		18C8311F1CCF01BB003EEF02 /* foregroundStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foregroundStar@2x.png"; sourceTree = "<group>"; };
+		18C831201CCF01BB003EEF02 /* SYStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYStarRatingView.h; sourceTree = "<group>"; };
+		18C831211CCF01BB003EEF02 /* SYStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYStarRatingView.m; sourceTree = "<group>"; };
+		18C831221CCF01BB003EEF02 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		18C831231CCF01BB003EEF02 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		18E9D9F51CB4A05100415F0F /* LFArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFArticleDetailViewController.h; sourceTree = "<group>"; };
 		18E9D9F61CB4A05100415F0F /* LFArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFArticleDetailViewController.m; sourceTree = "<group>"; };
 		18E9D9F81CB4E9C200415F0F /* E_CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = E_CommentViewController.h; sourceTree = "<group>"; };
@@ -580,6 +598,13 @@
 		18EFCA1E1CB3902C00810F43 /* LFBookDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFBookDetailView.h; sourceTree = "<group>"; };
 		18EFCA1F1CB3902C00810F43 /* LFBookDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFBookDetailView.m; sourceTree = "<group>"; };
 		18EFCA211CB3903900810F43 /* LFBookDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFBookDetailView.xib; sourceTree = "<group>"; };
+		18F235E91CCDE49B0018CA0D /* LFBookCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFBookCommentController.h; sourceTree = "<group>"; };
+		18F235EA1CCDE49B0018CA0D /* LFBookCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFBookCommentController.m; sourceTree = "<group>"; };
+		18F235EC1CCE129F0018CA0D /* LFBookComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFBookComment.h; sourceTree = "<group>"; };
+		18F235ED1CCE129F0018CA0D /* LFBookComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFBookComment.m; sourceTree = "<group>"; };
+		18F235EF1CCE158E0018CA0D /* LFBookCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFBookCommentCell.h; sourceTree = "<group>"; };
+		18F235F01CCE158E0018CA0D /* LFBookCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFBookCommentCell.m; sourceTree = "<group>"; };
+		18F235F11CCE158E0018CA0D /* LFBookCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFBookCommentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1009,6 +1034,8 @@
 				182B8C2B1CBF9DF000C746FD /* LFBookDetailInfoViewController.m */,
 				1804C5C81CCA1B890024C539 /* LFCommentDetailController.h */,
 				1804C5C91CCA1B890024C539 /* LFCommentDetailController.m */,
+				18F235E91CCDE49B0018CA0D /* LFBookCommentController.h */,
+				18F235EA1CCDE49B0018CA0D /* LFBookCommentController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1046,6 +1073,8 @@
 				18ADD8721CC764D60075F1DC /* LFExpireBooks.m */,
 				18ADD8741CC766060075F1DC /* LFBookDetailInfo.h */,
 				18ADD8751CC766060075F1DC /* LFBookDetailInfo.m */,
+				18F235EC1CCE129F0018CA0D /* LFBookComment.h */,
+				18F235ED1CCE129F0018CA0D /* LFBookComment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1062,6 +1091,9 @@
 				1804C5C61CC9CE9E0024C539 /* LFRelationShipView.m */,
 				1804C5CB1CCA24F20024C539 /* LFReplyViewCell.h */,
 				1804C5CC1CCA24F20024C539 /* LFReplyViewCell.m */,
+				18F235EF1CCE158E0018CA0D /* LFBookCommentCell.h */,
+				18F235F01CCE158E0018CA0D /* LFBookCommentCell.m */,
+				18F235F11CCE158E0018CA0D /* LFBookCommentCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1092,6 +1124,7 @@
 		187F1F6D1CAB829A00890413 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				18C8311A1CCF01BB003EEF02 /* SYStarRating */,
 				18334EB71CBB73B2002D2CAD /* ShareSDK */,
 				18B6C1BB1CB74BE300BB3487 /* SDWebImage */,
 				186746571CB6566C005B98C9 /* MJExtension */,
@@ -1343,6 +1376,29 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		18C8311A1CCF01BB003EEF02 /* SYStarRating */ = {
+			isa = PBXGroup;
+			children = (
+				18C8311B1CCF01BB003EEF02 /* Image */,
+				18C831201CCF01BB003EEF02 /* SYStarRatingView.h */,
+				18C831211CCF01BB003EEF02 /* SYStarRatingView.m */,
+				18C831221CCF01BB003EEF02 /* UIImage+Tint.h */,
+				18C831231CCF01BB003EEF02 /* UIImage+Tint.m */,
+			);
+			path = SYStarRating;
+			sourceTree = "<group>";
+		};
+		18C8311B1CCF01BB003EEF02 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				18C8311C1CCF01BB003EEF02 /* backgroundStar.png */,
+				18C8311D1CCF01BB003EEF02 /* backgroundStar@2x.png */,
+				18C8311E1CCF01BB003EEF02 /* foregroundStar.png */,
+				18C8311F1CCF01BB003EEF02 /* foregroundStar@2x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		18E9DA3B1CB4E9F400415F0F /* resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1590,11 +1646,13 @@
 				181EA2271CAD24B40089E3C1 /* 1.png in Resources */,
 				18AEB5401CC8A6C100609223 /* up.png in Resources */,
 				181EA22F1CAD288E0089E3C1 /* LFBookView.xib in Resources */,
+				18C831261CCF01BB003EEF02 /* foregroundStar.png in Resources */,
 				18E9DA6D1CB4E9F400415F0F /* weixin@2x.png in Resources */,
 				18AEB53F1CC8A6C100609223 /* down.png in Resources */,
 				18EFCA1A1CB38A1700810F43 /* LFBookCommendCell.xib in Resources */,
 				187F1F381CAB7E2D00890413 /* LaunchScreen.storyboard in Resources */,
 				18E9DA561CB4E9F400415F0F /* Chapter2.txt in Resources */,
+				18C831241CCF01BB003EEF02 /* backgroundStar.png in Resources */,
 				18334EE61CBB73B3002D2CAD /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				18334EE81CBB73B3002D2CAD /* WeiboSDK.bundle in Resources */,
 				181EA2161CACC88D0089E3C1 /* LFLoginVIewController.storyboard in Resources */,
@@ -1606,9 +1664,11 @@
 				18334EEA1CBB73B3002D2CAD /* read_me.txt in Resources */,
 				18E9DA6C1CB4E9F400415F0F /* sina@2x.png in Resources */,
 				18E9DA671CB4E9F400415F0F /* reader_comments@2x.png in Resources */,
+				18C831251CCF01BB003EEF02 /* backgroundStar@2x.png in Resources */,
 				18E9DA581CB4E9F400415F0F /* Chapter4.txt in Resources */,
 				18E9DA6A1CB4E9F400415F0F /* reader_font_increase@2x.png in Resources */,
 				18E9DA611CB4E9F400415F0F /* reader_bg1@2x.png in Resources */,
+				18F235F31CCE158E0018CA0D /* LFBookCommentCell.xib in Resources */,
 				18EFCA121CB387E600810F43 /* LFArticleCell.xib in Resources */,
 				18381EC01CAE4F2E00F1ECAA /* LFBookReviewCell.xib in Resources */,
 				18E9DA681CB4E9F400415F0F /* reader_cover@2x.png in Resources */,
@@ -1622,6 +1682,7 @@
 				181EA2281CAD24B40089E3C1 /* 2.png in Resources */,
 				18E9DA5D1CB4E9F400415F0F /* magnifiter@2x.png in Resources */,
 				18E9DA5F1CB4E9F400415F0F /* r_drag-dot@2x.png in Resources */,
+				18C831271CCF01BB003EEF02 /* foregroundStar@2x.png in Resources */,
 				18E9DA691CB4E9F400415F0F /* reader_font_decrease@2x.png in Resources */,
 				181EA2181CACC8E40089E3C1 /* icon@2x.png in Resources */,
 				18E9DA621CB4E9F400415F0F /* reader_bg2@2x.png in Resources */,
@@ -1662,6 +1723,7 @@
 				18E9DA221CB4E9D100415F0F /* E_MarkTableViewCell.m in Sources */,
 				187F1F771CAB829A00890413 /* AppDelegate.m in Sources */,
 				181EA2211CAD23480089E3C1 /* LFRecommendsCell.m in Sources */,
+				18C831291CCF01BB003EEF02 /* UIImage+Tint.m in Sources */,
 				18E9DA251CB4E9D100415F0F /* E_SettingBottomBar.m in Sources */,
 				18B6C22E1CB793B400BB3487 /* LFRank.m in Sources */,
 				18B6C1DE1CB74BE300BB3487 /* NSData+ImageContentType.m in Sources */,
@@ -1680,6 +1742,7 @@
 				18B6C23A1CB7B67800BB3487 /* LFCmd.m in Sources */,
 				18E9DA1E1CB4E9D100415F0F /* E_DrawerView.m in Sources */,
 				18334EB61CBB4E14002D2CAD /* LFCommendViewController.m in Sources */,
+				18F235EE1CCE129F0018CA0D /* LFBookComment.m in Sources */,
 				18381EB01CAE0AEA00F1ECAA /* LFBookViewCell.m in Sources */,
 				181EA2081CACC6F50089E3C1 /* LFClassicViewController.m in Sources */,
 				186746531CB649F6005B98C9 /* LFHttpTool.m in Sources */,
@@ -1706,6 +1769,7 @@
 				18E9DA9B1CB5128300415F0F /* LFNotationViewController.m in Sources */,
 				1867464C1CB649B8005B98C9 /* AFNetworkReachabilityManager.m in Sources */,
 				1804C5CD1CCA24F20024C539 /* LFReplyViewCell.m in Sources */,
+				18C831281CCF01BB003EEF02 /* SYStarRatingView.m in Sources */,
 				18E9D9F71CB4A05100415F0F /* LFArticleDetailViewController.m in Sources */,
 				181EA22D1CAD287E0089E3C1 /* LFBookeView.m in Sources */,
 				187F1F2A1CAB7E2D00890413 /* main.m in Sources */,
@@ -1735,6 +1799,7 @@
 				186746501CB649B8005B98C9 /* AFURLSessionManager.m in Sources */,
 				18ADD86A1CC760580075F1DC /* LFIntroinfo.m in Sources */,
 				1804C5C71CC9CE9E0024C539 /* LFRelationShipView.m in Sources */,
+				18F235F21CCE158E0018CA0D /* LFBookCommentCell.m in Sources */,
 				18B6C2431CB7B9D800BB3487 /* LFExtInfo.m in Sources */,
 				18ADD8701CC764240075F1DC /* LFPrice.m in Sources */,
 				181EA20B1CACC7070089E3C1 /* LFHistoryViewController.m in Sources */,
@@ -1748,6 +1813,7 @@
 				18E9DA8F1CB4EA0200415F0F /* UIScrollView+Extension.m in Sources */,
 				18ADD8731CC764D60075F1DC /* LFExpireBooks.m in Sources */,
 				18ADD86D1CC761B90075F1DC /* LFBook.m in Sources */,
+				18F235EB1CCDE49B0018CA0D /* LFBookCommentController.m in Sources */,
 				18B6C1E31CB74BE300BB3487 /* SDWebImageDownloaderOperation.m in Sources */,
 				186746561CB6553F005B98C9 /* LFCategory.m in Sources */,
 				18B6C1E41CB74BE300BB3487 /* SDWebImageManager.m in Sources */,

@@ -61,6 +61,13 @@
  */
 @property (nonatomic,assign) NSInteger agree;
 @property (nonatomic,assign) NSInteger top;
+
+@property (nonatomic,assign) NSInteger index;
+@property (nonatomic,assign) NSInteger replyuid;
+@property (nonatomic,assign) NSInteger replyid;
+@property (nonatomic,assign) NSInteger replytype;
+@property (nonatomic,assign) NSInteger replyreplyid;
+
 /**
  *  作者
  */

@@ -45,4 +45,10 @@
 @property (nonatomic,assign)NSInteger totalwords;
 @property (nonatomic,assign)NSInteger publishPrice;
 @property (nonatomic,strong) LFStatParams *stat_params;
+
+@property (nonatomic,assign)NSInteger commentcount;
+@property (nonatomic,strong) NSArray *topuser;
+@property (nonatomic,assign)NSInteger score;
+@property (nonatomic,assign)NSInteger scorerank;
+@property (nonatomic,assign)NSInteger bid;
 @end

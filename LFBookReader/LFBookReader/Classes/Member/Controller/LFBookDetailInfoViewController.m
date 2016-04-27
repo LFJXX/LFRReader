@@ -12,6 +12,7 @@
 #import "LFRelationShipView.h"
 #import "FdButton.h"
 #import "LFCommentDetailController.h"
+#import "LFBookCommentController.h"
 
 @interface LFBookDetailInfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
@@ -19,6 +20,7 @@
 @property (nonatomic,strong) UIView *headerView;
 @property (nonatomic,strong) UIImageView *iconView;
 @property (nonatomic,strong) UILabel *nameLable;
+@property (nonatomic,weak) SYStarRatingView *starView;
 @property (nonatomic,strong) UILabel *scoreLable;
 @property (nonatomic,strong) UILabel *catoryLable;
 @property (nonatomic,strong) UILabel *autherLable;
@@ -187,10 +189,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (indexPath.section == 1) {
-        LFCommentDetailController *detailVC = [[LFCommentDetailController alloc] init];
-        detailVC.commentList = self.bookInfo.commentinfo.commentlist[indexPath.row];
-        [self.navigationController pushViewController:detailVC animated:YES];
+    if (indexPath.section == 1 ) {
+        if (indexPath.row == 3) {
+          
+            LFBookCommentController *bookComment = [[LFBookCommentController alloc] init];
+            bookComment.bid = self.bookInfo.commentinfo.bid;
+            [self.navigationController pushViewController:bookComment animated:YES];
+        }else{
+        
+            LFCommentDetailController *detailVC = [[LFCommentDetailController alloc] init];
+            detailVC.commentList = self.bookInfo.commentinfo.commentlist[indexPath.row];
+            [self.navigationController pushViewController:detailVC animated:YES];
+        }
     }
     
 }
@@ -445,6 +455,12 @@
         self.nameLable = [LFUtility creatLableWithFrame:CGRectZero font:15 color:[UIColor whiteColor] title:@""];
         [_headerView addSubview:_nameLable];
         
+        SYStarRatingView *startView = [[SYStarRatingView alloc] initWithFrame:CGRectMake(50, 50, 100, 20)];
+        self.starView = startView;
+        self.starView.foregroundViewColor = [UIColor orangeColor];
+        self.starView.userInteractionEnabled = NO;
+        [_headerView addSubview:self.starView];
+        
         self.scoreLable = [LFUtility creatLableWithFrame:CGRectZero font:13 color:[UIColor whiteColor] title:@""];
         [_headerView addSubview:_scoreLable];
         
@@ -477,7 +493,8 @@
     CGFloat nameLableH = 20;
 
     self.nameLable.frame = CGRectMake(nameLableX, _iconView.y,nameLableW  , nameLableH);
-    self.scoreLable.frame = CGRectMake(nameLableX, CGRectGetMaxY(_nameLable.frame), self.view.width, nameLableH);
+    self.starView.frame = CGRectMake(nameLableX, CGRectGetMaxY(_nameLable.frame), 100, 20);
+    self.scoreLable.frame = CGRectMake(CGRectGetMaxX(self.starView.frame)+marginX, _starView.y, self.view.width, nameLableH);
     CGFloat W = [self.catoryLable.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, nameLableH) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.catoryLable.font} context:nil].size.width;
     self.catoryLable.frame = CGRectMake(nameLableX, CGRectGetMaxY(_scoreLable.frame), W, nameLableH);
     self.lineView.frame = CGRectMake(CGRectGetMaxX(_catoryLable.frame)+marginX, _catoryLable.y, 1, _catoryLable.height);
@@ -498,7 +515,8 @@
     }
     [self.iconView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"4"]];
     self.nameLable.text = bookinfo.introinfo.book.title;
-    self.scoreLable.text = bookinfo.introinfo.scoreInfo.scoretext;
+    [self.starView setScore:bookinfo.introinfo.scoreInfo.score/5.0 withAnimation:YES];
+    self.scoreLable.text = [NSString stringWithFormat:@"%ld分",bookinfo.introinfo.scoreInfo.score];
     self.catoryLable.text = bookinfo.introinfo.book.categoryname;
     self.autherLable.text = bookinfo.introinfo.book.author;
     self.priceLable.text = [NSString stringWithFormat:@"%ld  %@",bookinfo.introinfo.book.totalwords,bookinfo.introinfo.prices.first];

@@ -12,7 +12,7 @@
 
 @interface LFCommentDetailController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
-
+@property (nonatomic,strong) NSMutableArray *replyArray;
 @end
 
 @implementation LFCommentDetailController
@@ -21,6 +21,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
+    [self loadNewData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -29,7 +30,10 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 1;
+    if (section == 0) {
+        return 1;
+    }
+    return self.replyArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -52,8 +56,14 @@
         if (cell == nil) {
             cell = [[LFReplyViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identidier1];
         }
-        cell.selectionStyle  = UITableViewCellSelectionStyleNone;
+        if (indexPath.row == 0) {
+            cell.hidden = NO;
+        }else{
         
+            cell.hidden = YES;
+        }
+        cell.selectionStyle  = UITableViewCellSelectionStyleNone;
+        cell.commentlist = self.replyArray[indexPath.row];
 
         return cell;
 
@@ -62,13 +72,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (indexPath.section == 0) {
-        return [self computeHeightWithIndex:0];
-    }
-    return 44;
+    return [self computeHeightWithIndex:indexPath.row section:indexPath.section];
+
 }
-- (CGFloat)computeHeightWithIndex:(NSInteger)index{
-    if (index == 0) {
+- (CGFloat)computeHeightWithIndex:(NSInteger)index section:(NSInteger)section{
+    if (section == 0) {
         
         LFCommentList *list = self.commentList;
         CGFloat marginX = 10;
@@ -83,11 +91,42 @@
         return iconWH+textLableH+ContentH+platFormH+5*marginX;
     }else{
     
-        return 44;
+        LFCommentList *list = self.replyArray[index];
+        CGFloat marginX = 10;
+        CGFloat iconWH = 40;
+        CGFloat textLableH = 20;
+        if (index != 0) {
+            textLableH = 0;
+        }else{
+        
+            textLableH = 30;
+        }
+
+        CGFloat ContentH = [list.content boundingRectWithSize:CGSizeMake(LFScreenW -3* marginX - iconWH, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
+        
+        return marginX+iconWH+textLableH+ContentH+marginX;
+
     }
     
    
     
+}
+
+- (void)loadNewData{
+    
+    LFCommentList *list = self.commentList;
+    NSString *url = [NSString stringWithFormat:@"http://ios.reader.qq.com/v5_6/nativepage/comment/detail?bid=%ld&commentid=%@&ctype=0",list.bid, list.commentid];
+    [LFHttpTool GET:url parameters:nil success:^(id response) {
+        NSInteger code = [response[@"httpcode"] integerValue];
+        if (code == 0) {
+            
+            self.replyArray = [LFCommentList mj_objectArrayWithKeyValuesArray:response[@"replylist"]] ;
+            
+            [self.tableView reloadData];
+        }
+    } failure:^(NSError *error) {
+        
+    }];
 }
 #pragma mark 懒加载
 - (UITableView *)tableView{
@@ -100,6 +139,14 @@
         
     }
     return _tableView;
+}
+
+- (NSMutableArray *)replyArray{
+
+    if (_replyArray == nil) {
+        _replyArray = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _replyArray;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
