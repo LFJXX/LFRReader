@@ -142,6 +142,9 @@
 		18CD20A51CD0897300182245 /* LFComposeCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD20A41CD0897300182245 /* LFComposeCommentController.m */; };
 		18CD20AA1CD08B7500182245 /* LFComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD20A91CD08B7500182245 /* LFComposeView.m */; };
 		18CD20AD1CD0C06700182245 /* LFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD20AC1CD0C06700182245 /* LFTextView.m */; };
+		18E32A3A1CD30F01008C6E89 /* LFPickValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E32A361CD30F01008C6E89 /* LFPickValue.m */; };
+		18E32A3B1CD30F01008C6E89 /* LFPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E32A381CD30F01008C6E89 /* LFPickView.m */; };
+		18E32A3C1CD30F01008C6E89 /* LFPickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E32A391CD30F01008C6E89 /* LFPickView.xib */; };
 		18E336221CD1E6770059C9BF /* LFContentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E336211CD1E6770059C9BF /* LFContentListController.m */; };
 		18E336251CD1EB330059C9BF /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E336231CD1EB330059C9BF /* down@2x.png */; };
 		18E336261CD1EB330059C9BF /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E336241CD1EB330059C9BF /* up@2x.png */; };
@@ -491,6 +494,11 @@
 		18CD20A91CD08B7500182245 /* LFComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFComposeView.m; sourceTree = "<group>"; };
 		18CD20AB1CD0C06700182245 /* LFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFTextView.h; sourceTree = "<group>"; };
 		18CD20AC1CD0C06700182245 /* LFTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFTextView.m; sourceTree = "<group>"; };
+		18E32A351CD30F01008C6E89 /* LFPickValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFPickValue.h; sourceTree = "<group>"; };
+		18E32A361CD30F01008C6E89 /* LFPickValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFPickValue.m; sourceTree = "<group>"; };
+		18E32A371CD30F01008C6E89 /* LFPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFPickView.h; sourceTree = "<group>"; };
+		18E32A381CD30F01008C6E89 /* LFPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFPickView.m; sourceTree = "<group>"; };
+		18E32A391CD30F01008C6E89 /* LFPickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LFPickView.xib; sourceTree = "<group>"; };
 		18E336161CD1E1BF0059C9BF /* LFContentListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFContentListController.h; sourceTree = "<group>"; };
 		18E336211CD1E6770059C9BF /* LFContentListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFContentListController.m; sourceTree = "<group>"; };
 		18E336231CD1EB330059C9BF /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
@@ -1429,6 +1437,7 @@
 		18CD20A61CD08B5E00182245 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				18E32A341CD30F01008C6E89 /* UIPickerView */,
 				18CD20A71CD08B5E00182245 /* LFComposeView */,
 			);
 			path = view;
@@ -1443,6 +1452,18 @@
 				18CD20AC1CD0C06700182245 /* LFTextView.m */,
 			);
 			path = LFComposeView;
+			sourceTree = "<group>";
+		};
+		18E32A341CD30F01008C6E89 /* UIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				18E32A351CD30F01008C6E89 /* LFPickValue.h */,
+				18E32A361CD30F01008C6E89 /* LFPickValue.m */,
+				18E32A371CD30F01008C6E89 /* LFPickView.h */,
+				18E32A381CD30F01008C6E89 /* LFPickView.m */,
+				18E32A391CD30F01008C6E89 /* LFPickView.xib */,
+			);
+			path = UIPickerView;
 			sourceTree = "<group>";
 		};
 		18E9DA3B1CB4E9F400415F0F /* resource */ = {
@@ -1694,6 +1715,7 @@
 				18C831261CCF01BB003EEF02 /* foregroundStar.png in Resources */,
 				18E9DA6D1CB4E9F400415F0F /* weixin@2x.png in Resources */,
 				18EFCA1A1CB38A1700810F43 /* LFBookCommendCell.xib in Resources */,
+				18E32A3C1CD30F01008C6E89 /* LFPickView.xib in Resources */,
 				187F1F381CAB7E2D00890413 /* LaunchScreen.storyboard in Resources */,
 				18E9DA561CB4E9F400415F0F /* Chapter2.txt in Resources */,
 				18C831241CCF01BB003EEF02 /* backgroundStar.png in Resources */,
@@ -1783,6 +1805,7 @@
 				18EFC9E81CB3600B00810F43 /* LFBookCommendViewController.m in Sources */,
 				18ADD87E1CC780030075F1DC /* LFUtility.m in Sources */,
 				181EA2041CACC5660089E3C1 /* FdButton.m in Sources */,
+				18E32A3A1CD30F01008C6E89 /* LFPickValue.m in Sources */,
 				18B6C1E81CB74BE300BB3487 /* UIImage+MultiFormat.m in Sources */,
 				18B6C2401CB7B9B200BB3487 /* LFSrcitem.m in Sources */,
 				181EA20E1CACC7130089E3C1 /* LFMemberViewController.m in Sources */,
@@ -1809,6 +1832,7 @@
 				18E9DA371CB4E9DA00415F0F /* E_Mark.m in Sources */,
 				18381EBF1CAE4F2E00F1ECAA /* LFBookReviewCell.m in Sources */,
 				18E9DA201CB4E9D100415F0F /* E_ListView.m in Sources */,
+				18E32A3B1CD30F01008C6E89 /* LFPickView.m in Sources */,
 				1867464B1CB649B8005B98C9 /* AFHTTPSessionManager.m in Sources */,
 				18E9DA8D1CB4EA0200415F0F /* MJRefreshFooterView.m in Sources */,
 				18334EE41CBB73B3002D2CAD /* README.md in Sources */,

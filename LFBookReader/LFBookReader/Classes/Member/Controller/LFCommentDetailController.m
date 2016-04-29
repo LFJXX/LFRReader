@@ -13,6 +13,9 @@
 @interface LFCommentDetailController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *replyArray;
+@property (nonatomic,strong) UIView *bottomView;
+@property (nonatomic,strong) UIButton *commentBtn;
+@property (nonatomic,strong) UIButton *likeBtn;
 @end
 
 @implementation LFCommentDetailController
@@ -21,6 +24,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.bottomView];
     [self loadNewData];
 }
 
@@ -132,7 +136,7 @@
 - (UITableView *)tableView{
     
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height - 64-44)];
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -147,6 +151,32 @@
         _replyArray = [NSMutableArray arrayWithCapacity:0];
     }
     return _replyArray;
+}
+- (UIView *)bottomView{
+    if (_bottomView == nil) {
+        _bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.tableView.frame), self.view.width, 44)];
+        self.commentBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.width/2, _bottomView.height)];
+        [self.commentBtn setTitle:@"评论" forState:UIControlStateNormal];
+        [self.commentBtn setTitleColor:LFLightBlueColor forState:UIControlStateNormal];
+        [self.commentBtn addTarget:self action:@selector(commentClick) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomView addSubview:self.commentBtn];
+        
+        self.likeBtn = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.commentBtn.frame), 0, self.view.width/2, _bottomView.height)];
+        [self.likeBtn setTitle:@"赞" forState:UIControlStateNormal];
+        [self.likeBtn setTitleColor:LFLightBlueColor forState:UIControlStateNormal];
+        [self.likeBtn addTarget:self action:@selector(likeClick) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomView addSubview:self.likeBtn];
+        
+    }
+    return _bottomView;
+}
+
+- (void)commentClick{
+
+}
+
+- (void)likeClick{
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

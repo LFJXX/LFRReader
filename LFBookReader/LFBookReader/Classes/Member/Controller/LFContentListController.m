@@ -9,14 +9,14 @@
 #import "LFContentListController.h"
 #import "LFButton.h"
 #import "LFChapter.h"
-@interface LFContentListController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource>
+@interface LFContentListController ()<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource,LFPickViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong) UIView *headerView;
 @property (nonatomic,strong) UILabel *listCountLable;
 @property (nonatomic,strong) LFButton *listCountBtn;
 @property (nonatomic,strong) NSMutableArray *lists;
 @property (nonatomic,strong) NSMutableArray *chapterList;
-@property (nonatomic,strong) UIPickerView *pickView;
+@property (nonatomic,strong) LFPickView *pickView;
 @end
 
 @implementation LFContentListController
@@ -34,7 +34,18 @@
         NSInteger code = [response[@"httpcode"] integerValue];
         if (code == 0) {
             self.lists = [LFChapter mj_objectArrayWithKeyValuesArray:response[@"chapter"]];
-            self.chapterList = response[@"page"];
+            NSArray *array = response[@"page"];
+            [self.chapterList removeAllObjects];
+            for (int i = 0; i<array.count; i++) {
+                LFPickValue *value = [[LFPickValue alloc] init];
+                value.title = array[i];
+                value.code = [NSString stringWithFormat:@"%d",i];
+                [self.chapterList addObject:value];
+            }
+            
+            self.pickView.dataSourse = self.chapterList;
+            self.listCountLable.text = [NSString stringWithFormat:@"共%@章",response[@"total"]];
+
             [self.tableView reloadData];
         }
     } failure:^(NSError *error) {
@@ -90,6 +101,12 @@
 
     return self.chapterList[row];
 }
+
+-(void)pickViewDidSeleted:(LFPickValue *)value{
+
+    [self.listCountBtn setTitle:value.title forState:UIControlStateNormal];
+    self.listCountBtn.selected = NO;
+}
 #pragma mark 懒加载
 - (UITableView *)tableView{
 
@@ -139,20 +156,25 @@
     return _chapterList;
 }
 
-- (UIPickerView *)pickView{
+- (LFPickView *)pickView{
 
     if (_pickView == nil) {
-        _pickView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.height - 150, self.view.width, 150)];
-        _pickView.backgroundColor = [UIColor whiteColor];
-        _pickView.delegate = self;
-        _pickView.dataSource = self;
+        _pickView = [[LFPickView alloc] init];
+        _pickView .delegate = self;
+        
     }
     return _pickView;
 }
+
 - (void)listCountBtnClick:(UIButton *)sender{
 
     sender.selected = !sender.selected;
-    [self.view addSubview:self.pickView];
+    if (sender.selected) {
+        [self.pickView show];
+    }else{
+    
+        [self.pickView hide];
+    }
     
     
 }
