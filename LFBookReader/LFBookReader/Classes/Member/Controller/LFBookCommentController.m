@@ -11,6 +11,7 @@
 #import "LFCommentCell.h"
 #import "LFBookComment.h"
 #import "LFBookCommentCell.h"
+#import "LFComposeCommentController.h"
 @interface LFBookCommentController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *commentlists;
@@ -108,6 +109,8 @@
 - (void)composeComment{
 
     LFLOG(@"发表评论");
+    LFComposeCommentController *composeVc  = [[LFComposeCommentController alloc] init];
+    [self.navigationController pushViewController:composeVc animated:YES];
 }
 
 - (void)loadNewData{

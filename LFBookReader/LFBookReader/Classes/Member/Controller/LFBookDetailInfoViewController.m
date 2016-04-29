@@ -13,7 +13,7 @@
 #import "FdButton.h"
 #import "LFCommentDetailController.h"
 #import "LFBookCommentController.h"
-
+#import "LFContentListController.h"
 @interface LFBookDetailInfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) LFBookDetailInfo *bookInfo;
@@ -200,6 +200,13 @@
             LFCommentDetailController *detailVC = [[LFCommentDetailController alloc] init];
             detailVC.commentList = self.bookInfo.commentinfo.commentlist[indexPath.row];
             [self.navigationController pushViewController:detailVC animated:YES];
+        }
+    }else if (indexPath.section == 0){
+    
+        if (indexPath.row == 1) {
+            LFContentListController *contentlistVC= [[LFContentListController alloc] init];
+            contentlistVC.bid = self.bookInfo.commentinfo.bid;
+            [self.navigationController pushViewController:contentlistVC animated:YES];
         }
     }
     
